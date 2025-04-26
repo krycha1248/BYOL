@@ -25,3 +25,5 @@ echo "[OVH] Generating grub.cfg..."
 grub2-mkconfig -o /boot/grub2/grub.cfg
 
 echo "[OVH] Boot configuration complete."
+rm -f /root/.ovh/make_image_bootable.sh
+rm -rf /root/.ovh/
