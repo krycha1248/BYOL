@@ -6,6 +6,8 @@ DISK="/dev/sda"
 
 echo "[*] Reinstalling GRUB on ${DISK}..."
 
+dnf install /root/kernel-core*.rpm
+
 # Reinstall GRUB
 grub2-install "${DISK}"
 
