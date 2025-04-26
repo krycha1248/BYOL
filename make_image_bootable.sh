@@ -3,6 +3,10 @@ set -euxo pipefail
 
 echo "[OVH] Running CentOS 9 Stream boot setup..."
 
+# Upewnij się, że pakiety GRUB są zainstalowane
+echo "[OVH] Installing GRUB packages if missing..."
+dnf install -y grub2 grub2-efi dracut
+
 # Wymuś ponowne generowanie initramfs dla aktualnego jądra
 CURRENT_KERNEL=$(uname -r)
 echo "[OVH] Rebuilding initramfs for kernel: $CURRENT_KERNEL"
